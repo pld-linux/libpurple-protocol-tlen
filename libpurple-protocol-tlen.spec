@@ -9,6 +9,7 @@ Source0:	http://nic.com.pl/~alek/pidgin-tlen/pidgin-tlen-%{version}.tar.gz
 # Source0-md5:	bc293057e0840859edfb90ee381300f8
 URL:		http://nic.com.pl/~alek/pidgin-tlen/
 BuildRequires:	pidgin-devel
+BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -23,9 +24,7 @@ Tlen Plugin dla Pidgina.
 %build
 %{__make} \
 	CC="%{__cc}" \
-	CXX="%{__cxx}" \
-	CFLAGS="%{rpmcflags}" \
-	CXXFLAGS="%{rpmcxxflags}" \
+	CFLAGS="$(pkg-config pidgin --cflags) -fPIC -Wall %{rpmcflags}" \
 	LDFLAGS="%{rpmldflags}"
 
 %install
