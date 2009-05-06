@@ -12,21 +12,21 @@ BuildRequires:	pidgin-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Tlen plugin for Pidgin
+Tlen plugin for Pidgin.
 
 %description -l pl.UTF-8
-Tlen Plugin dla Pidgina
+Tlen Plugin dla Pidgina.
 
 %prep
 %setup -q -n pidgin-tlen-%{version}
 
 %build
-CC="%{__cc}" \
-CXX="%{__cxx}" \
-CFLAGS="%{rpmcflags}" \
-CXXFLAGS="%{rpmcxxflags}" \
-LDFLAGS="%{rpmldflags}" \
-%{__make}
+%{__make} \
+	CC="%{__cc}" \
+	CXX="%{__cxx}" \
+	CFLAGS="%{rpmcflags}" \
+	CXXFLAGS="%{rpmcxxflags}" \
+	LDFLAGS="%{rpmldflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -44,4 +44,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README
 %attr(755,root,root) %{_libdir}/purple-2/*.so
-%attr(755,root,root) %{_pixmapsdir}/pidgin/protocols/*/tlen.png
+%{_pixmapsdir}/pidgin/protocols/*/tlen.png
