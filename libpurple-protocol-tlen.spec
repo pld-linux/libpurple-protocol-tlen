@@ -1,5 +1,5 @@
 Summary:	tlen.pl plugin for pidgin
-Summary(pl.UTF-8):tlen.pl plugin dla pidgina
+Summary(pl.UTF-8):	tlen.pl plugin dla pidgina
 Name:		pidgin-plugin-tlen
 Version:	20090411
 Release:	0.1
@@ -14,15 +14,19 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Tlen plugin for Pidgin
 
-%description -l hu.UTF-8
+%description -l pl.UTF-8
 Tlen Plugin dla Pidgina
 
 %prep
 %setup -q -n pidgin-tlen-%{version}
 
 %build
+CC="%{__cc}" \
+CXX="%{__cxx}" \
+CFLAGS="%{rpmcflags}" \
+CXXFLAGS="%{rpmcxxflags}" \
+LDFLAGS="%{rpmldflags}" \
 %{__make}
-
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -40,4 +44,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README
 %attr(755,root,root) %{_libdir}/purple-2/*.so
-%attr(755,root,root) %{_pixmapsdir}/pidgin/protocols
+%attr(755,root,root) %{_pixmapsdir}/pidgin/protocols/*/tlen.png
