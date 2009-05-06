@@ -1,4 +1,4 @@
-Summary:	tlen.pl plugin for pidgin
+Summary:	Tlen.pl protocol plugin for Pidgin
 Summary(pl.UTF-8):	tlen.pl plugin dla pidgina
 Name:		pidgin-plugin-tlen
 Version:	20090411
@@ -13,7 +13,7 @@ BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Tlen plugin for Pidgin.
+Tlen.pl protocol plugin for Pidgin.
 
 %description -l pl.UTF-8
 Tlen Plugin dla Pidgina.
