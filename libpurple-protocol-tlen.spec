@@ -1,6 +1,6 @@
 Summary:	Tlen.pl protocol plugin for Pidgin
 Summary(pl.UTF-8):	tlen.pl plugin dla pidgina
-Name:		pidgin-plugin-tlen
+Name:		libpurple-protocol-tlen
 Version:	20090411
 Release:	0.1
 License:	GPL
@@ -8,8 +8,9 @@ Group:		Applications/Communications
 Source0:	http://nic.com.pl/~alek/pidgin-tlen/pidgin-tlen-%{version}.tar.gz
 # Source0-md5:	bc293057e0840859edfb90ee381300f8
 URL:		http://nic.com.pl/~alek/pidgin-tlen/
-BuildRequires:	pidgin-devel
+BuildRequires:	libpurple-devel
 BuildRequires:	pkgconfig
+Obsoletes:	pidgin-plugin-tlen
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -32,9 +33,9 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_libdir}/purple-2
 for i in 16 22 48; do \
 	install -d $RPM_BUILD_ROOT%{_pixmapsdir}/pidgin/protocols/$i
-	install tlen_$i.png $RPM_BUILD_ROOT%{_pixmapsdir}/pidgin/protocols/$i/tlen.png
+	cp -a tlen_$i.png $RPM_BUILD_ROOT%{_pixmapsdir}/pidgin/protocols/$i/tlen.png
 done
-install libtlen.so $RPM_BUILD_ROOT%{_libdir}/purple-2
+install -p libtlen.so $RPM_BUILD_ROOT%{_libdir}/purple-2
 
 %clean
 rm -rf $RPM_BUILD_ROOT
