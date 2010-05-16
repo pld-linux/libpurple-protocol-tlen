@@ -9,6 +9,7 @@ Source0:	http://nic.com.pl/~alek/pidgin-tlen/pidgin-tlen-%{version}.tar.gz
 # Source0-md5:	a51e10b60c9754a1fa6dd077da90999f
 URL:		http://nic.com.pl/~alek/pidgin-tlen/
 BuildRequires:	libpurple-devel
+BuildRequires:	pidgin-devel
 BuildRequires:	pkgconfig
 Obsoletes:	pidgin-plugin-tlen
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
