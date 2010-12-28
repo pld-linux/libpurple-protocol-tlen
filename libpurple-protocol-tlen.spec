@@ -1,12 +1,12 @@
 Summary:	Tlen.pl protocol plugin for Pidgin
-Summary(pl.UTF-8):	tlen.pl plugin dla pidgina
+Summary(pl.UTF-8):	Tlen.pl plugin dla pidgina
 Name:		libpurple-protocol-tlen
-Version:	20100205
-Release:	0.1
+Version:	20101112
+Release:	1
 License:	GPL
 Group:		Applications/Communications
 Source0:	http://nic.com.pl/~alek/pidgin-tlen/pidgin-tlen-%{version}.tar.gz
-# Source0-md5:	a51e10b60c9754a1fa6dd077da90999f
+# Source0-md5:	c7279014f492830ba93be138d9f2e9c0
 URL:		http://nic.com.pl/~alek/pidgin-tlen/
 BuildRequires:	libpurple-devel
 BuildRequires:	pidgin-devel
@@ -18,7 +18,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Tlen.pl protocol plugin for Pidgin.
 
 %description -l pl.UTF-8
-Tlen Plugin dla Pidgina.
+Tlen.pl plugin dla Pidgina.
 
 %prep
 %setup -q -n pidgin-tlen-%{version}
